@@ -1,0 +1,370 @@
+:root {
+    /* 🎯 ปรับพาเลทโทนสีใหม่ให้เป็นห้องสมุดแนว Cozy & Warm */
+    --deep-green: #1b3322;         /* 🟢 สีเขียวเข้มหลัก */
+    --card-green: #24422c;         /* 🟩 สีเขียวสำหรับกล่องฟอร์ม */
+    --warm-white: #fcfbfa;         /* ⚪ สีขาวครีมอุ่นอ่อน ๆ สำหรับ Navbar */
+    --gold-cream: #e3d9c6;         /* 🟡 สีทองครีมละมุน */
+    --soft-cream: #f4f0ea;         /* 🍦 สีขาวนวลตา สำหรับตัวอักษรทั่วไป */
+    --muted-green: #425e49;        /* 🌿 สีเขียวหม่น สำหรับทำเส้นขอบ */
+    --text-dark: #14281a;          /* 🟢 สีเขียวป่าลึก อ่านบนพื้นครีม/ขาวง่ายมาก */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sarabun', sans-serif;
+}
+
+/* ==========================================
+    📚 ส่วนพื้นหลัง: ภาพห้องสมุดสีครีมๆ นวลตาสบายตา
+   ========================================== */
+body {
+    background-image: linear-gradient(rgba(247, 243, 235, 0.65), rgba(247, 243, 235, 0.75)), 
+                      url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1600&auto=format&fit=crop');
+    
+    background-size: cover;           /* ยืดรูปให้เต็มจอพอดี */
+    background-position: center;      /* จัดรูปให้อยู่กึ่งกลาง */
+    background-attachment: fixed;     /* ล็อกรูปนิ่งเวลารูดหน้าจอลง */
+    background-repeat: no-repeat;     /* ห้ามรูปขึ้นซ้ำ */
+    
+    color: var(--soft-cream);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+    1. ส่วนหัวสีอ่อน Warm White (Header) 
+   ========================================== */
+.main-header {
+    background-color: var(--warm-white) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); 
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid #e8e5e0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo .logo-icon {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.brand-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark) !important;
+}
+
+.header-nav a {
+    color: var(--text-dark) !important;
+    background: #edebe6 !important;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+.header-nav a:hover {
+    background: #e3d9c6 !important;
+}
+
+.status-indicator {
+    font-size: 12px;
+    background-color: #63b373;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ==========================================
+    2. Body Center & กรอบกล่องฟอร์มการ์ด
+   ========================================== */
+.body-center-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 140px 20px 60px 20px;
+}
+
+/* 📦 กรอบ Card ฟอร์มรอบนอก (หน้าจอง, หน้าตาราง ยกเลิก) */
+.booking-card, .card {
+    background-color: var(--card-green) !important;
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(55, 135, 15, 0.863) !important;
+    box-shadow: 0 20px 40px rgba(27, 51, 34, 0.15) !important;
+    color: var(--soft-cream) !important;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.card-header h2, .card-header h3 {
+    color: var(--gold-cream) !important;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card-header p {
+    color: #b0baa9 !important;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* ✨ [อัปเดตใหม่] กล่องล้อมกรอบข้อมูลตรงกลางและหน้าตาราง: เปลี่ยนสีเป็นครีมวอร์มไวท์มินิมอล */
+.inputs-wrapper-box, 
+.card fieldset, 
+.table-responsive,
+.booking-card > div[style*="background-color"] {
+    background-color: #fcf9f2 !important; /* ครีมวอร์มไวท์นวลตาสุดซอฟต์ ไม่เขียวทึบแล้ว */
+    border: 1px solid #dfd5c2 !important; /* เส้นขอบน้ำตาลครีมจางๆ ละมุนสายตา */
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+.inputs-wrapper-box .form-group:last-child {
+    margin-bottom: 0;
+}
+
+/* หัวข้อตัวหนังสือ เช่น รหัสนักศึกษา / ชื่อ-นามสกุล บนแผ่นครีมสว่าง */
+label, .inputs-wrapper-box label {
+    display: block;
+    font-weight: 600;
+    font-size: 14.5px;
+    margin-bottom: 8px;
+    color: #1b3322 !important; /* ใช้สีเขียวป่าลึก เพื่อให้อ่านง่ายชัดเจน ไม่จมหาย */
+}
+
+/* 📝 ช่องสำหรับคลิกกรอกข้อมูลอินพุตและ Select ด้านใน */
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #dcd5c9 !important; /* สีขอบกระดาษถนอมสายตา */
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #ffffff !important; /* กล่องพิมพ์สีขาวสะอาดคลีนๆ */
+    color: #1b3322 !important;            /* ตัวหนังสือพิมพ์เป็นสีเขียวป่าลึกเข้มๆ */
+    transition: all 0.2s ease-in-out;
+}
+
+input::placeholder {
+    color: #b2aba0 !important; /* สีตัวหนังสือบอกใบ้สีเทาครีมหม่น */
+}
+
+input:focus, select:focus {
+    border-color: #bfae90 !important; /* ตอนคลิกพิมเปลี่ยนขอบเป็นสีทองเข้ม */
+    box-shadow: 0 0 0 4px rgba(191, 174, 144, 0.15) !important; /* แผ่ออร่าสีทองจางๆ */
+    background-color: #ffffff !important;
+    outline: none;
+}
+
+/* ⏱️ โซนปุ่มเลือกรอบเวลา */
+.time-zone-box {
+    margin-bottom: 25px;
+}
+.time-zone-box label {
+    color: var(--gold-cream) !important; /* อยู่นอกกล่องครีม ให้กลับไปใช้สีทองนวล */
+}
+
+.slots-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.slot-btn {
+    padding: 12px;
+    background-color: var(--deep-green) !important;
+    border: 1.5px solid var(--muted-green) !important;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #d1c9bd !important;
+    transition: all 0.15s;
+}
+
+.slot-btn:hover:not(:disabled) {
+    border-color: var(--gold-cream) !important;
+    color: var(--gold-cream) !important;
+    background-color: #2c4d36 !important;
+}
+
+.slot-btn.active, .slot-btn.selected {
+    background-color: var(--gold-cream) !important;
+    color: #14281a !important;
+    border-color: var(--gold-cream) !important;
+    font-weight: 700;
+}
+
+.slot-btn.disabled {
+    background-color: #142418 !important;
+    border-color: #1a2b1f !important;
+    color: #4a5c4e !important;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+/* 🚀 ปุ่มกดยืนยันวงรีมนสวย */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--gold-cream) 0%, #c9beaa 100%) !important;
+    color: #14281a !important;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--soft-cream) 0%, var(--gold-cream) 100%) !important;
+    transform: translateY(-2px);
+}
+
+.btn-submit:disabled {
+    background: #2d4234 !important;
+    color: #536959 !important;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.info-text {
+    grid-column: span 2;
+    text-align: center;
+    color: #b0baa9;
+    font-size: 14px;
+    padding: 12px;
+    background: var(--deep-green);
+    border-radius: 6px;
+    border: 1px dashed var(--muted-green);
+}
+
+/* ==========================================
+    3. Pop-up สรุปคิวสำเร็จ (Modal)
+   ========================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(247, 243, 235, 0.45) !important; 
+    backdrop-filter: blur(6px) !important;
+}
+
+.modal-content {
+    background-color: var(--card-green) !important;
+    border: 1px solid rgba(227, 217, 198, 0.2);
+    margin: 12% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    color: var(--soft-cream);
+    box-shadow: 0 25px 50px rgba(27, 51, 34, 0.25) !important;
+}
+
+.modal-content h3 {
+    color: var(--gold-cream);
+}
+
+.checkmark-circle {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background-color: #2c4d36;
+    margin: 0 auto 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checkmark-circle::after {
+    content: "✓";
+    color: #63b373;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.summary-box {
+    text-align: left;
+    background-color: #edf4ee !important; 
+    border: 1px solid #d2e4d6 !important;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--text-dark) !important; 
+}
+
+.highlight-queue {
+    font-size: 26px;
+    color: #0f75bc !important; 
+    font-weight: 700;
+    display: block;
+    margin-top: 5px;
+}
+
+.btn-close {
+    width: 100%;
+    padding: 11px;
+    background-color: var(--deep-green);
+    color: var(--gold-cream);
+    border: 1px solid var(--muted-green);
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-close:hover {
+    background-color: var(--muted-green);
+    color: var(--soft-cream);
+}
+
+.btn-cancel-link {
+    color: #190404 !important;
+    background: rgba(255, 138, 138, 0.08) !important;
+    border: 1px dashed rgba(255, 138, 138, 0.3) !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+}
+.btn-cancel-link:hover {
+    background: rgba(255, 138, 138, 0.15) !important;
+}
+
+@media (max-width: 600px) {
+    .slots-grid { grid-template-columns: 1fr; }
+    .booking-card { padding: 20px; }
+}
